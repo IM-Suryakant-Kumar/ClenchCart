@@ -5,18 +5,17 @@ const jwt = require("jsonwebtoken");
 const authenticateUser = async (req, res, next) => {
 	let { token } = req.cookies;
 
-	if (!token) {
+	if (!token || token === "undefined") {
 		const authHeader = req.headers.authorization;
-		if (!(authHeader && authHeader.startsWith("Bearer")))
+		if (!authHeader || !authHeader.startsWith("Bearer"))
 			throw new UnauthenticatedError("Authentication Failed!");
 		token = authHeader.split(" ")[1];
 	}
 
-	if (token === "null")
+	if (token === "null" || token === "undefined")
 		throw new UnauthenticatedError("Authentication Failed!");
 
 	const { _id } = jwt.verify(token, process.env.JWT_SECRET);
-
 	req.user = await User.findById(_id);
 	next();
 };

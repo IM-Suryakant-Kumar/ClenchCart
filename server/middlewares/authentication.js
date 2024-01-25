@@ -12,7 +12,7 @@ const authenticateUser = async (req, res, next) => {
 		token = authHeader.split(" ")[1];
 	}
 
-	if (token === "null" || token === "undefined")
+	if (!token || token === "null" || token === "undefined")
 		throw new UnauthenticatedError("Authentication Failed!");
 
 	const { _id } = jwt.verify(token, process.env.JWT_SECRET);

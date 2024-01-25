@@ -58,17 +58,24 @@ const logout = async (req, res) => {
 		.json({ success: true, user, message: "Logged out successfully" });
 };
 
-const getUser = async (req, res) => {
+const getProfile = async (req, res) => {
 	res.status(201).json({ success: true, user: req.user });
 };
 
-const updateUser = async (req, res) => {
+const updateProfile = async (req, res) => {
 	const user = await User.findByIdAndUpdate(req.user._id, req.body, {
 		new: true,
 	});
 	res
 		.status(201)
-		.json({ success: true, user, message: "User updated successfully" });
+		.json({ success: true, user, message: "Profile updated successfully" });
 };
 
-module.exports = { register, login, guestLogin, logout, getUser, updateUser };
+module.exports = {
+	register,
+	login,
+	guestLogin,
+	logout,
+	getProfile,
+	updateProfile,
+};

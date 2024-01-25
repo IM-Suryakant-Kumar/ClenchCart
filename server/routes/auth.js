@@ -7,12 +7,16 @@ const {
 	getProfile,
 	updateProfile,
 } = require("../controllers/auth");
+const { authenticateUser } = require("../middlewares/authentication");
 
 const router = Router();
 
 router.route("/register").post(register);
 router.route("/login").get(guestLogin).post(login);
-router.route("/logout").get(logout);
-router.route("/me").get(getProfile).patch(updateProfile);
+router.route("/logout").get(authenticateUser, logout);
+router
+	.route("/me")
+	.get(authenticateUser, getProfile)
+	.patch(authenticateUser, updateProfile);
 
 module.exports = router;

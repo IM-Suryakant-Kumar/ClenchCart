@@ -7,6 +7,7 @@ const cors = require("cors");
 const connectDB = require("./db");
 const notFoundMiddleware = require("./middlewares/not-found");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
+const authRouter = require("./routes/auth");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(helmet());
 app.use(morgan("tiny"));
 
 // routers
+app.use("/auth", authRouter);
 
 // errorHandler
 app.use(notFoundMiddleware);

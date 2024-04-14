@@ -1,8 +1,8 @@
-const { BadRequestError, UnauthenticatedError } = require("../errors");
-const User = require("../models/User");
-const sendToken = require("../utils/sendToken");
+import { BadRequestError, UnauthenticatedError } from "../errors";
+import { User } from "../models";
+import { sendToken } from "../utils";
 
-const register = async (req, res) => {
+export const register = async (req, res) => {
 	const { name, email, password } = req.body;
 
 	if (!(name && email && password))
@@ -19,7 +19,7 @@ const register = async (req, res) => {
 		.json({ success: true, user, message: "Registered successfully" });
 };
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
 	const { email, password } = req.body;
 
 	if (!(email && password))
@@ -37,7 +37,7 @@ const login = async (req, res) => {
 	sendToken(res, 200, user, "Logged in successfully");
 };
 
-const guestLogin = async (req, res) => {
+export const guestLogin = async (req, res) => {
 	const email = process.env.GUEST_EMAIL;
 	const password = process.env.GUEST_PASSWORD;
 
@@ -56,31 +56,22 @@ const guestLogin = async (req, res) => {
 	sendToken(res, 200, user, "Logged in successfully");
 };
 
-const logout = async (req, res) => {
+export const logout = async (req, res) => {
 	res
 		.status(201)
 		.cookie("token", null, { expires: new Date(Date.now()) })
 		.json({ success: true, user, message: "Logged out successfully" });
 };
 
-const getProfile = async (req, res) => {
+export const getProfile = async (req, res) => {
 	res.status(201).json({ success: true, user: req.user });
 };
 
-const updateProfile = async (req, res) => {
+export const updateProfile = async (req, res) => {
 	const user = await User.findByIdAndUpdate(req.user._id, req.body, {
 		new: true,
 	});
 	res
 		.status(201)
 		.json({ success: true, user, message: "Profile updated successfully" });
-};
-
-module.exports = {
-	register,
-	login,
-	guestLogin,
-	logout,
-	getProfile,
-	updateProfile,
 };

@@ -1,13 +1,13 @@
-const { Router } = require("express");
-const {
-	register,
-	login,
-	guestLogin,
-	logout,
+import { Router } from "express";
+import { authenticateUser } from "../middlewares";
+import {
 	getProfile,
+	guestLogin,
+	login,
+	logout,
+	register,
 	updateProfile,
-} = require("../controllers/auth");
-const { authenticateUser } = require("../middlewares/authentication");
+} from "../controllers";
 
 const router = Router();
 
@@ -19,4 +19,4 @@ router
 	.get(authenticateUser, getProfile)
 	.patch(authenticateUser, updateProfile);
 
-module.exports = router;
+export default router;

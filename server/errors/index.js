@@ -1,40 +1,33 @@
-class CustomAPIError extends Error {
+export class CustomAPIError extends Error {
 	constructor(message) {
 		super(message);
 	}
 }
 
-class BadRequestError extends CustomAPIError {
+export class BadRequestError extends CustomAPIError {
 	constructor(message) {
 		super(message);
 		this.statuCode = 400;
 	}
 }
 
-class NotFoundError extends CustomAPIError {
+export class NotFoundError extends CustomAPIError {
 	constructor(message) {
 		super(message);
 		this.statuCode = 404;
 	}
 }
 
-class UnauthenticatedError extends CustomAPIError {
+export class UnauthenticatedError extends CustomAPIError {
 	constructor(message) {
 		super(message);
 		this.statuCode = 401;
 	}
 }
 
-class UnauthorizedError extends CustomAPIError {
+export class UnauthorizedError extends CustomAPIError {
 	constructor(message) {
 		super(message);
 		this.statuCode = 403;
 	}
 }
-
-module.exports = {
-	BadRequestError,
-	NotFoundError,
-	UnauthenticatedError,
-	UnauthorizedError,
-};

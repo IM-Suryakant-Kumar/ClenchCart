@@ -1,13 +1,12 @@
-require("express-async-errors");
-require("dotenv").config();
-const express = require("express");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const cors = require("cors");
-const connectDB = require("./db");
-const notFoundMiddleware = require("./middlewares/not-found");
-const errorHandlerMiddleware = require("./middlewares/error-handler");
-const authRouter = require("./routes/auth");
+import "express-async-errors";
+import "dotenv/config";
+import express from "express";
+import helmet from "helmet";
+import morgan from "morgan";
+import cors from "cors";
+import connectDB from "./db";
+import { notFoundMiddleware, errorHandlerMiddleware } from "./middlewares";
+import { authRouter } from "./routes";
 
 const app = express();
 

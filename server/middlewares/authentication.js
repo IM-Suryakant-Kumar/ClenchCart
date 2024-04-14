@@ -1,8 +1,8 @@
-const { UnauthenticatedError, UnauthorizedError } = require("../errors");
-const User = require("../models/User");
-const jwt = require("jsonwebtoken");
+import { UnauthenticatedError, UnauthorizedError } from "../errors";
+import {User} from "../models";
+import jwt from "jsonwebtoken";
 
-const authenticateUser = async (req, res, next) => {
+export const authenticateUser = async (req, res, next) => {
 	let { token } = req.cookies;
 
 	if (!token || token === "undefined") {
@@ -20,12 +20,10 @@ const authenticateUser = async (req, res, next) => {
 	next();
 };
 
-const authorizedUser = (...roles) => {
+export const authorizedUser = (...roles) => {
 	return (req, res, next) => {
 		if (!roles.includes(req.user.role))
 			throw new UnauthorizedError("Unauthorized to access tis route");
 		next();
 	};
 };
-
-module.exports = { authenticateUser, authorizedUser };

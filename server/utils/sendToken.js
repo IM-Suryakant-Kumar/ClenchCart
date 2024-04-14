@@ -1,4 +1,4 @@
-const sendToken = (res, statusCode, user, message) => {
+export const sendToken = (res, statusCode, user, message) => {
 	const token = user.createToken();
 
 	res.status(statusCode).cookie("token", token, {
@@ -8,5 +8,3 @@ const sendToken = (res, statusCode, user, message) => {
 		httpOnly: true,
 	}).json({ success: true, token, message });
 };
-
-module.exports = sendToken;

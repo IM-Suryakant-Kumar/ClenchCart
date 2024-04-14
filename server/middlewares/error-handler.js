@@ -1,4 +1,4 @@
-const errorHandlerMiddleware = (err, req, res, next) => {
+export const errorHandlerMiddleware = (err, req, res, next) => {
 	const customError = {
 		statusCode: err.statusCode || 500,
 		message: err.message || "Something went wrong",
@@ -39,5 +39,3 @@ const errorHandlerMiddleware = (err, req, res, next) => {
 		.status(customError.statusCode)
 		.json({ success: false, message: customError.message });
 };
-
-module.exports = errorHandlerMiddleware;

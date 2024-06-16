@@ -1,25 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root {
-	--primary-cl: #f3f9fb;
-	--secondary-cl: #008ecc;
-	--gray-cl: #666666;
-	--fashion-cl: #f3f3f3;
-	--font: "Cinzel", serif;
-	--custom-white: #fdfffc;
-	--dark-blue: #a9bcd0;
-}
-
-*,
-*::after,
-*::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Cinzel", serif;
-	font-family: "Exo 2", sans-serif;
-}
-
 *::-webkit-scrollbar {
 	background-color: transparent;
 	width: 15px;
@@ -36,9 +16,4 @@
 	border: 4px solid var(--custom-white);
 	background-color: var(--dark-blue);
 	background-clip: content-box;
-}
-
-.link {
-	text-decoration: none;
-	color: inherit;
 }

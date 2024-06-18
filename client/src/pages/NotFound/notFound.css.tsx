@@ -1,18 +1,24 @@
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import styled from "styled-components";
 
-export const Container = styled(Stack)`
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-`
+export const Container = styled(Stack).attrs({
+  height: "calc(100vh - 6rem)",
+  justifyContent: "center",
+  alignItems: "center"
+})``
 
-export const Title = styled.p`
-  font-size: larger;
-  text-align: center;
-  color: red;
-
+export const Title = styled(Typography).attrs({
+  className: "title",
+  variant: "subtitle1",
+  sx: {
+    fontSize: "larger",
+    textAlign: "center",
+    color: "red",
+  }
+})`
   @media screen and (min-width: 768px) {
-    font-size: xx-large;
+    &.title {
+      font-size: xx-large;
+    }
   }
 `

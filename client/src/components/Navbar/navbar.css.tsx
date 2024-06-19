@@ -240,11 +240,13 @@ export const SearchBox = styled(Stack).attrs({
 })`
 /* to show search box */
   &.search-box {
-    left: 100vw;
+    left: -100%;
+    right: 100%;
   }
 
   &.search-box.show {
     left: 0.25em;
+    right: 0.25em;
   }
 
   @media screen and (min-width: 768px) {

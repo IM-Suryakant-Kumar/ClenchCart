@@ -1,5 +1,10 @@
+import { Container } from "./home.css"
+import { Slider } from "../../components"
+
 export const Home = () => {
   return (
-    <div>Home</div>
+    <Container>
+      <Slider />
+    </Container>
   )
 }

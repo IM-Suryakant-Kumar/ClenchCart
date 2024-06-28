@@ -1,27 +1,34 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import styled from "styled-components";
 
 export const Container = styled(Box).attrs({
   sx: {
-    display: "flex",
-    overflow: "hidden"
+    overflow: "hidden",
+    position: "relative",
   }
 })``
+
+export const Wrapper = styled(Box).attrs({
+  sx: {
+    display: "flex",
+    position: "relative",
+  }
+})`
+  left: props => calc(100 * `${props.$slideidx}`)
+`
 
 export const Card = styled(Stack).attrs({
   direction: "row",
   sx: {
     minWidth: "calc(100% - 0.5em)",
-    height: "10rem",
+    height: { xs: "10rem", sm: "24rem" },
     border: "2px solid var(--color-logo)",
     boxShadow: "1px 1px #00000020, -1px -1px #00000020",
-    borderRadius: "0.25em",
-    display: "flex",
-    justifyContent: "center",
+    borderRadius: "0.3125em",
     alignItems: "center",
     gap: "1em",
     m: "0.25em",
-    position: "relative"
   }
 })``
 
@@ -30,35 +37,70 @@ export const CardImg = styled.img.attrs({
     width: "55%",
     height: "55%",
     objectFit: "contain",
-    marginLeft: "0.25em"
+    marginLeft: "1em"
   }
 })``
 
 
 export const CardInfo = styled(Stack).attrs({
   sx: {
-    maxWidth: "8rem",
     height: "100%",
-    bgcolor: "var(--color-logo)",
-    color: "var(--color-primary)",
+    color: "var(--color-logo)",
     width: "80%",
     justifyContent: "center",
     alignItems: "center",
     gap: "0.25em",
     textAlign: "center",
-    borderRadius: "2em 0 0 2em",
-    border: "2px solid var(--color-secondary)"
   }
 })``
 
 export const CardTitle = styled(Typography).attrs({
   variant: "h2",
   sx: {
-    // color: "var(--color-logo)",
     fontFamily: "var(--font-cinzel)",
-    fontSize: "large",
+    fontSize: { xs: "large", sm: "x-large" },
     fontWeight: "bold"
   }
 })``
-export const CardDesc = styled(Stack).attrs({})``
-export const CardButton = styled(Stack).attrs({})``
+
+export const CardDesc = styled(Typography).attrs({
+  variant: "caption",
+  sx: {
+    fontFamily: "var(--font-cinzel)",
+    fontSize: { xs: "small", sm: "large" },
+  }
+})``
+
+export const CardButton = styled(Button).attrs({
+  variant: "contained",
+  size: "large",
+  sx: {
+    bgcolor: "var(--color-logo)",
+    color: "var(--color-primary)",
+    fontSize: { xs: "x-small", sm: "smaller" },
+    fontFamily: "var(--font-cinzel)",
+    fontWeight: "bold",
+    mt: "1em"
+  }
+})``
+
+export const LeftArrow = styled(ChevronLeft).attrs({
+  sx: {
+    cursor: "pointer",
+    fontSize: { xs: "1.75rem", sm: "2.5rem" },
+    color: "var(--color-logo)",
+    position: "absolute",
+    left: "-0.05em",
+    top: { xs: "calc((10rem - 1em) / 2)", sm: "calc((24rem - 1em) / 2)" }
+  }
+})``
+export const RightArrow = styled(ChevronRight).attrs({
+  sx: {
+    cursor: "pointer",
+    fontSize: { xs: "1.75em", sm: "2.5rem" },
+    color: "var(--color-logo)",
+    position: "absolute",
+    right: "-0.05em",
+    top: { xs: "calc((10rem - 1em) / 2)", sm: "calc((24rem - 1em) / 2)" }
+  }
+})``

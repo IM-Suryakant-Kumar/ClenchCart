@@ -12,11 +12,11 @@ export const Container = styled(Box).attrs({
 export const Wrapper = styled(Box).attrs({
   sx: {
     display: "flex",
-    position: "relative",
+    transition: "all 1s ease"
   }
-})`
-  left: props => calc(100 * `${props.$slideidx}`)
-`
+})<{slideidx: number}>`
+  transform: translateX(${ props => props.slideidx * -100}%);
+`;
 
 export const Card = styled(Stack).attrs({
   direction: "row",

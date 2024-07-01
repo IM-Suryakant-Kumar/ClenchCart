@@ -1,5 +1,7 @@
 import { Card, CardButton, CardDesc, CardImg, CardInfo, CardTitle, Container, LeftArrow, RightArrow, Wrapper } from "./slider.css"
-import CarImg from "../../assets/car-img.jpg"
+import CarImg from "../../assets/car-img.jpg";
+import BikeImg from "../../assets/bike-img.jpg";
+import RobotImg from "../../assets/robot-img.jpg";
 import { useState } from "react"
 
 export const Slider = () => {
@@ -17,28 +19,28 @@ export const Slider = () => {
 
   return (
     <Container>
-      <Wrapper $slideidx={slide}>
+      <Wrapper slideidx={slide}>
         <Card>
           <CardImg src={CarImg} alt="super car" />
           <CardInfo>
-            <CardTitle>Super Cars</CardTitle>
-            <CardDesc>Starts from ₹ 300</CardDesc>
+            <CardTitle>Super Car</CardTitle>
+            <CardDesc>Starts from ₹ 350</CardDesc>
             <CardButton>Shop Now</CardButton>
           </CardInfo>
         </Card>
         <Card>
-          <CardImg />
+          <CardImg src={BikeImg} />
           <CardInfo>
-            <CardTitle></CardTitle>
-            <CardDesc></CardDesc>
+            <CardTitle>Super Bike</CardTitle>
+            <CardDesc>Starts from ₹ 299</CardDesc>
             <CardButton>Shop Now</CardButton>
           </CardInfo>
         </Card>
         <Card>
-          <CardImg />
+          <CardImg src={RobotImg} />
           <CardInfo>
-            <CardTitle></CardTitle>
-            <CardDesc></CardDesc>
+            <CardTitle>Super Robot</CardTitle>
+            <CardDesc>Starts from ₹ 199</CardDesc>
             <CardButton>Shop Now</CardButton>
           </CardInfo>
         </Card>

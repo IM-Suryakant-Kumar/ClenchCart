@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const Container = styled(Box).attrs({
   sx: {
     p: "0.25em",
-    mb: "2em"
   }
 })``
 

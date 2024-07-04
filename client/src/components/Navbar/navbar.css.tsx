@@ -21,7 +21,8 @@ export const MenuBar = styled(Stack).attrs({
     backgroundColor: "var(--color-secondary)",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "0.25em"
+    borderRadius: "0.25em",
+    display: { md: "none" }
   }
 })``
 
@@ -50,25 +51,19 @@ export const Logo = styled(Typography).attrs({
 export const MenuList = styled(Stack).attrs({
   className: "menu",
   sx: {
+    flexDirection: { md: "row" },
     bgcolor: "#ffffff",
-    width: "100%",
-    position: "absolute",
+    width: { xs: "100%", md: "auto" },
+    position: { xs: "absolute", md: "static" },
     left: "-100vw",
     top: "3rem",
+    zIndex: "5",
     transition: "all 0.5s ease-in-out"
   }
 })`
 /* to show menu list */
   &.menu.show {
     left: 0;
-  }
-
-  @media screen and (min-width: 768px) {
-    &.menu {
-      width: auto;
-      position: static;
-      flex-direction: row;
-    }
   }
 `
 // menulist item
@@ -82,17 +77,11 @@ export const MenuItem = styled(Typography).attrs({
     p: "0.4em 0.6em",
     borderBottom: "2px solid var(--color-primary)",
     height: "2rem",
-    display: "flex",
+    display: { xs: "flex", md: "none" },
     alignItems: "center",
     cursor: "pointer"
   }
-})`
-  @media screen and (min-width: 768px) {
-    &.menu-item {
-      display: none;
-    }
-  }
-`
+})``
 
 export const HomeItem = styled(Typography).attrs({
   className: "home-item",
@@ -102,19 +91,13 @@ export const HomeItem = styled(Typography).attrs({
     fontWeight: "bold",
     color: "var(--color-logo)",
     p: "0.4em 0.6em",
-    borderBottom: "2px solid var(--color-primary)",
+    borderBottom: { xs: "2px solid var(--color-primary)", md: "none" },
     height: "2rem",
     display: "flex",
     alignItems: "center",
     cursor: "pointer"
   }
-})`
-  @media screen and (min-width: 768px) {
-    &.home-item {
-      border-bottom: none;
-    }
-  }
-`
+})``
 
 export const ShopNowItem = styled(Typography).attrs({
   className: "shop-now-item",
@@ -124,19 +107,13 @@ export const ShopNowItem = styled(Typography).attrs({
     fontWeight: "bold",
     color: "var(--color-logo)",
     p: "0.4em 0.6em",
-    borderBottom: "2px solid var(--color-primary)",
+    borderBottom: { xs: "2px solid var(--color-primary)", md: "none" },
     height: "2rem",
     display: "flex",
     alignItems: "center",
     cursor: "pointer"
   }
-})`
-  @media screen and (min-width: 768px) {
-    &.shop-now-item {
-      border-bottom: none;
-    }
-  }
-`
+})``
 
 export const OrdersItem = styled(Typography).attrs({
   className: "orders-item",
@@ -146,48 +123,32 @@ export const OrdersItem = styled(Typography).attrs({
     fontWeight: "bold",
     color: "var(--color-logo)",
     p: "0.4em 0.6em",
-    borderBottom: "2px solid var(--color-primary)",
+    borderBottom: { xs: "2px solid var(--color-primary)", md: "none" },
     height: "2rem",
     display: "flex",
     alignItems: "center",
     cursor: "pointer"
   }
-})`
-  @media screen and (min-width: 768px) {
-    &.orders-item {
-      border-bottom: none;
-    }
-  }
-`
+})``
 
 // menulist item icon
 export const HomeIcon = styled(House).attrs({
   sx: {
+    display: { md: "none" },
     marginRight: "0.5em",
     fontSize: "1.5rem",
     fontWeight: "bold",
   },
-})`
-  @media screen and (min-width: 768px) {
-    & {
-      display: none !important;
-    }
-  }
-`
+})``
 
 export const ShopNowIcon = styled(ShoppingCart).attrs({
   sx: {
+    display: { md: "none" },
     marginRight: "0.5em",
     fontSize: "1.5rem",
     fontWeight: "bold",
   }
-})`
-  @media screen and (min-width: 768px) {
-    & {
-      display: none !important;
-    }
-  }
-`
+})``
 
 export const ProfileIcon = styled(AccountCircle).attrs({
   sx: {
@@ -199,17 +160,12 @@ export const ProfileIcon = styled(AccountCircle).attrs({
 
 export const OrdersIcon = styled(Shop2).attrs({
   sx: {
+    display: { md: "none" },
     marginRight: "0.5em",
     fontSize: "1.5rem",
     fontWeight: "bold",
   }
-})`
-  @media screen and (min-width: 768px) {
-    & {
-      display: none !important;
-    }
-  }
-`
+})``
 
 export const WishlistIcon = styled(Favorite).attrs({
   sx: {
@@ -224,12 +180,14 @@ export const SearchBox = styled(Stack).attrs({
   className: "search-box",
   direction: "row",
   sx: {
+    display: { xs: "none", md: "flex" },
+    width: { md: "22%" },
     bgcolor: "var(--color-primary)",
     height: "2rem",
-    position: "absolute",
+    position: { xs: "absolute", md: "static" },
     top: 0,
-    left: "0.25em",
-    right: "0.25em",
+    left: "-100%",
+    right: "100%",
     bottom: 0,
     margin: "auto",
     zIndex: 4,
@@ -238,22 +196,10 @@ export const SearchBox = styled(Stack).attrs({
     transition: "all 0.5s ease-in-out"
   }
 })`
-/* to show search box */
-  &.search-box {
-    left: -100%;
-    right: 100%;
-  }
-
+  /* to show search box */
   &.search-box.show {
     left: 0.25em;
     right: 0.25em;
-  }
-
-  @media screen and (min-width: 768px) {
-    &.search-box {
-      position: static;
-      width: 34%;
-    }
   }
 `
 
@@ -285,19 +231,14 @@ export const Badges = styled(Stack).attrs({
 // badges icon
 export const SearchButton = styled(Search).attrs({
   sx: {
+    display: { md: "none" },
     fontWeight: "bold",
     color: "var(--color-secondary)",
     bgcolor: "var(--color-logo)",
     border: "1px solid var(--color-secondary)",
     borderRadius: "50%"
   }
-})`
-  @media screen and (min-width: 768px) {
-    & {
-      display: none !important;
-    }
-  }
-`
+})``
 
 export const Cart = styled(LocalMall).attrs({
   sx: {

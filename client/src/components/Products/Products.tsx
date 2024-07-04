@@ -58,7 +58,7 @@ export const Products = () => {
         <Card>
           <Image src="https://m.media-amazon.com/images/I/81JSHyjmoCL._AC_UL480_FMwebp_QL65_.jpg" />
           <InfoCont>
-            <Title>CLEVER TOTS Spider Super Hero</Title>
+            <Title>CLEVER TOTS Spider Super Hero Action Figure toy for kids</Title>
             <SubTitle>
               <Price>₹<Bold>290</Bold></Price>
               <Rating><CStar />5.0</Rating>

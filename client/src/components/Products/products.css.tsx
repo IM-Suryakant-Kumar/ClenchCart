@@ -24,7 +24,7 @@ export const Heading = styled(Typography).attrs({
 export const Wrapper = styled(Box).attrs({
   sx: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(16rem, 1fr))",
+    gridTemplateColumns: { xs: "repeat(auto-fill, minmax(14rem, 1fr))", md: "repeat(auto-fill, minmax(16rem, 1fr))" },
     gap: "0.25em",
   }
 })``
@@ -120,7 +120,8 @@ export const AddToWishlist = styled(FavoriteBorder).attrs({
     top: "0.5em",
     right: "0.5em",
     fontSize: "x-large",
-    color: "red"
+    color: "red",
+    cursor: "pointer"
   }
 })``
 
@@ -130,6 +131,7 @@ export const RemoveFromWishlist = styled(Favorite).attrs({
     top: "0.5em",
     right: "0.5em",
     fontSize: "x-large",
-    color: "red"
+    color: "red",
+    cursor: "pointer"
   }
 })``

@@ -12,7 +12,7 @@ export const Container = styled(Box).attrs({
 export const Wrapper = styled(Box).attrs({
   sx: {
     display: "flex",
-    transition: "all 1s ease"
+    transition: "all 1.5s ease"
   }
 })<{slideidx: number}>`
   transform: translateX(${ props => props.slideidx * -100}%);

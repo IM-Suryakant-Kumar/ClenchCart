@@ -2,12 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --primary-color: #f3f9fb;
-    --secondary-color: #008ecc;
-    --gray-color: #666666;
-    --fashion-color: #f3f3f3;
-    --custom-white: #fdfffc;
-    --dark-blue: #a9bcd0;
+    --color-primary: #ebf2fa;
+    --color-secondary: #cae9ff;
+    --color-logo: #3a86ff;
     --font-cinzel: "Cinzel", serif;
     --font-exo: "Exo 2", sans-serif;
   }

@@ -4,3 +4,4 @@ export * from "./Navbar/Navbar";
 export * from "./Footer/Footer";
 export * from "./Slider/Slider";
 export * from "./Products/Products";
+export * from "./FilterPanel/FilterPanel";

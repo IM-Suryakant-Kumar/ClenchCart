@@ -24,7 +24,7 @@ export const Wrapper = styled(Box).attrs({
   sx: {
     display: "grid",
     gridTemplateColumns: { xs: "repeat(auto-fill, minmax(15rem, 1fr))", md: "repeat(auto-fill, minmax(16rem, 1fr))" },
-    gap: "0.25em",
+    gap: "0.5em",
   }
 })``
 
@@ -34,9 +34,14 @@ export const Card = styled(Box).attrs({
     p: "1em",
     borderRadius: "0.25em",
     boxShadow: "2px 1px 1px 1px 00000020",
-    position: "relative"
+    position: "relative",
+    transition: "all 0.2s ease-in-out",
   }
-})``
+})`
+  &:hover {
+    transform: scale(1.02);
+  }
+`
 
 export const Image = styled(Box).attrs({
   sx: {

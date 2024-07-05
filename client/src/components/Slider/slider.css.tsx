@@ -22,7 +22,7 @@ export const Card = styled(Stack).attrs({
   direction: "row",
   sx: {
     minWidth: "calc(100% - 0.5em)",
-    height: { xs: "10rem", sm: "24rem" },
+    height: { xs: "10rem", sm: "20rem", md: "25rem" },
     border: "2px solid var(--color-logo)",
     boxShadow: "1px 1px #00000020, -1px -1px #00000020",
     borderRadius: "0.3125em",

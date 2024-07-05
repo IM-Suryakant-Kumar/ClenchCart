@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const Container = styled(Box).attrs({
   sx: {
     p: "0.25em",
-    mb: "2em"
   }
 })``
 
@@ -24,7 +23,7 @@ export const Heading = styled(Typography).attrs({
 export const Wrapper = styled(Box).attrs({
   sx: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(16rem, 1fr))",
+    gridTemplateColumns: { xs: "repeat(auto-fill, minmax(15rem, 1fr))", md: "repeat(auto-fill, minmax(16rem, 1fr))" },
     gap: "0.25em",
   }
 })``
@@ -39,20 +38,21 @@ export const Card = styled(Box).attrs({
   }
 })``
 
-export const Image = styled.img.attrs({
-  style: {
-    padding: "1em",
-    width: "14rem",
-    height: "14rem",
-    objectFit: "contain",
-    display: "block",
-    margin: "auto",
+export const Image = styled(Box).attrs({
+  sx: {
+    m: "1em",
+    height: { xs: "10rem", sm: "12rem", md: "14rem" },
   }
-})``
+}) <{ img: string }>`
+  background-image: ${props => `url(${props.img})`};
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+`
 
 export const InfoCont = styled(Stack).attrs({
   sx: {
-    gap: "0.7em"
+    gap: { xs: "0.4em", sm: "0.5em", md: "0.7em" }
   }
 })``
 
@@ -107,6 +107,7 @@ export const CButton = styled(Button).attrs({
   variant: "contained",
   size: "small",
   sx: {
+    mt: "0.7em",
     bgcolor: "var(--color-logo)",
     color: "var(--color-primary)",
     fontFamily: "var(--font-cinzel)",
@@ -120,7 +121,8 @@ export const AddToWishlist = styled(FavoriteBorder).attrs({
     top: "0.5em",
     right: "0.5em",
     fontSize: "x-large",
-    color: "red"
+    color: "red",
+    cursor: "pointer"
   }
 })``
 
@@ -130,6 +132,7 @@ export const RemoveFromWishlist = styled(Favorite).attrs({
     top: "0.5em",
     right: "0.5em",
     fontSize: "x-large",
-    color: "red"
+    color: "red",
+    cursor: "pointer"
   }
 })``

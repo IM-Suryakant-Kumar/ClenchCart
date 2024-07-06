@@ -1,11 +1,11 @@
-import { Bold, CButton, Card, Container, CStar, Heading, Image, InfoCont, Price, Rating, SubTitle, Title, Wrapper, RemoveFromWishlist, AddToWishlist } from "./products.css"
+import { Bold, CButton, Card, Container, CStar, Image, InfoCont, Price, Rating, SubTitle, Title, Wrapper, RemoveFromWishlist, AddToWishlist } from "./products.css"
+
 
 export const Products = () => {
- const isInFavorite = false;
-  
+  const isInFavorite = false;
+
   return (
     <Container>
-      <Heading>New Launches</Heading>
       <Wrapper>
         <Card>
           <Image img="https://m.media-amazon.com/images/I/617T6-w8HXL._SL1010_.jpg" />

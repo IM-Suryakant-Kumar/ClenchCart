@@ -47,6 +47,7 @@ export const ListItem = styled(Stack).attrs({
     boxShadow: "1px 1px 1px 1px #33333350, -1px -1px 1px 1px #33333350"
   }
 })``
+
 export const Copyright = styled(Typography).attrs({
   variant: "subtitle2",
   sx: {
@@ -56,6 +57,7 @@ export const Copyright = styled(Typography).attrs({
     textShadow: "5px 5px 5px 5px var(--color-logo), 5px -5px -5px 5px var(--color-logo), 5px 5px 5px 5px var(--color-logo) inset, 5px -5px -5px 5px var(--color-logo) inset"
   }
 })``
+
 export const Strong = styled(Typography).attrs({
   variant: "caption",
   sx: {
@@ -70,16 +72,19 @@ export const CodeIcon = styled(CodeOff).attrs({
     fontSize: { xs: "1.2rem", sm: "1.5rem" },
   }
 })``
+
 export const GitHubIcon = styled(GitHub).attrs({
   sx: {
     fontSize: { xs: "1.2rem", sm: "1.5rem" },
   }
 })``
+
 export const LinkedInIcon = styled(LinkedIn).attrs({
   sx: {
     fontSize: { xs: "1.2rem", sm: "1.5rem" },
   }
 })``
+
 export const TwitterIcon = styled(X).attrs({
   sx: {
     fontSize: { xs: "1.2rem", sm: "1.5rem" },

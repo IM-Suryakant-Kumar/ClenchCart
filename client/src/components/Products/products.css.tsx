@@ -8,22 +8,10 @@ export const Container = styled(Box).attrs({
   }
 })``
 
-export const Heading = styled(Typography).attrs({
-  variant: "h2",
-  sx: {
-    m: "0.25em",
-    textAlign: "center",
-    fontFamily: "var(--font-cinzel)",
-    fontSize: "large",
-    fontWeight: "bolder",
-    color: "var(--color-logo)",
-  }
-})``
-
 export const Wrapper = styled(Box).attrs({
   sx: {
     display: "grid",
-    gridTemplateColumns: { xs: "repeat(auto-fill, minmax(15rem, 1fr))", md: "repeat(auto-fill, minmax(16rem, 1fr))" },
+    gridTemplateColumns: { xs: "repeat(auto-fill, minmax(14rem, 1fr))", md: "repeat(auto-fill, minmax(16rem, 1fr))" },
     gap: "0.5em",
   }
 })``

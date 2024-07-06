@@ -5,7 +5,7 @@ export const Container = styled(Box).attrs({
   sx: {
     p: "0.25em",
     width: { xs: "100%", sm: "15rem" },
-    position: { sm: "absolute" }
+    position: { sm: "absolute" },
   }
 })``
 
@@ -39,6 +39,7 @@ export const FiltersCont = styled(Stack).attrs({
     width: { xs: "100%", sm: "15rem" },
     position: "absolute",
     left: { sm: 0 },
+    zIndex: 3,
     transition: "all 0.5s ease-in-out",
   }
 }) <{ show: string }>`
@@ -79,6 +80,7 @@ export const CategoryItem = styled.label.attrs({
     fontSize: "small",
     display: "flex",
     alignItems: "center",
+    cursor: "pointer"
   }
 })``
 
@@ -105,6 +107,7 @@ export const SortItem = styled.label.attrs({
     fontSize: "small",
     display: "flex",
     alignItems: "center",
+    cursor: "pointer"
   }
 })``
 

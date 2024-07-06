@@ -12,6 +12,7 @@ export const Container = styled(Box).attrs({
 
 export const Wrapper = styled(Box).attrs({
   sx: {
-    pl: { sm: "15em" }
+    p: "0.5em",
+    pl: { sm: "15.5em" }
   }
 })``

@@ -1,4 +1,4 @@
-import { CodeIcon, Container, Copyright, GitHubIcon, LinkedInIcon, List, ListItem, Logo, Strong, TwitterIcon } from "./footer.css"
+import { Container, Copyright, CodeIcon, GitHubIcon, LinkedInIcon, List, ListItem, Logo, Strong, TwitterIcon } from "./footer.css"
 
 export const Footer = () => {
   return (
